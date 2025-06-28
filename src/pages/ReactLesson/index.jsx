@@ -7,6 +7,7 @@ import ButtonAction from "../../components/ButtonAction";
 
 const ReactLesson = () => {
   const [nextQuestion, setNextQuestion] = useState(0);
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
 
   const currentIssue = dataQuestionsReact[nextQuestion];
   const progress = (nextQuestion / dataQuestionsReact.length) * 100;
@@ -32,19 +33,28 @@ const ReactLesson = () => {
         <div className="flex items-center gap-1.5">
           <img src="/heart.png" alt="Vidas" className="w-[22px]" />
           <span className="text-[1.2rem] font-extrabold text-[#FF4B4B]">5</span>
+          <p>{selectedQuestion}</p>
         </div>
       </div>
       {dataQuestionsReact.length > 0 ? (
         <>
           <div className="w-full h-auto flex flex-col items-center justify-center mt-[80px]">
             <div>
-              <h4 className="text-[1.8rem] font-bold text-[#4B4B4B]">
+              <h4 className="text-[1.8rem] font-bold text-[#4B4B4B] max-w-[1000px] text-center">
                 {currentIssue.question}
               </h4>
             </div>
             <div className="flex flex-col gap-3 mt-5">
-              {currentIssue.options.map((options) => (
-                <OptionButton options={options} />
+              {currentIssue.options.map((options, index) => (
+                <OptionButton
+                  key={index}
+                  options={options}
+                  value={index}
+                  change={selectedQuestion === index}
+                  onClick={(e) => {
+                    setSelectedQuestion(Number(e.target.value));
+                  }}
+                />
               ))}
             </div>
           </div>
