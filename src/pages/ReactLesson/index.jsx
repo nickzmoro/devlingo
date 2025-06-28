@@ -9,6 +9,7 @@ const ReactLesson = () => {
   const [nextQuestion, setNextQuestion] = useState(0);
 
   const currentIssue = dataQuestionsReact[nextQuestion];
+  const progress = (nextQuestion / dataQuestionsReact.length) * 100;
 
   return (
     <>
@@ -22,7 +23,10 @@ const ReactLesson = () => {
         </div>
         <div className="w-[50%]">
           <div className="relative w-full h-5 bg-[#E6E6E6] rounded-full">
-            <div className="absolute rounded-full top-0 left-0 h-full w-[5%] bg-[#8057FE]"></div>
+            <div
+              className="absolute rounded-full top-0 left-0 h-full bg-[#8057FE] transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            ></div>
           </div>
         </div>
         <div className="flex items-center gap-1.5">
