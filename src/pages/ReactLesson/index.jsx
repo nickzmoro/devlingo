@@ -14,7 +14,7 @@ const ReactLesson = () => {
 
   return (
     <>
-      <Header hasLogged />
+      <Header hasLogged hasBorder />
       <div className="flex w-screen h-auto items-center justify-center gap-5 mt-[100px]">
         <div>
           <IoClose
@@ -62,13 +62,20 @@ const ReactLesson = () => {
             <div className="mt-5">
               <ButtonAction
                 text={"Pular"}
-                onClick={() => setNextQuestion(nextQuestion + 1)}
+                onClick={() => {
+                  setNextQuestion(nextQuestion + 1);
+                  setSelectedQuestion(null);
+                }}
               />
             </div>
             <div>
               <ButtonAction
                 text={"Verificar"}
-                onClick={() => setNextQuestion(nextQuestion + 1)}
+                validate={selectedQuestion === null}
+                onClick={() => {
+                  setNextQuestion(nextQuestion + 1);
+                  setSelectedQuestion(null);
+                }}
                 green
               />
             </div>
