@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-export let getDataQuestionsReact = [
+let getDataQuestionsReact = [
   {
     id: uuidv4(),
     question: "O que é JSX em React?",
@@ -166,3 +166,5 @@ export let getDataQuestionsReact = [
     correctAnswer: 2,
   },
 ];
+
+export default getDataQuestionsReact;

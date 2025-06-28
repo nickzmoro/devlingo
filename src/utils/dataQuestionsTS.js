@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-export let getDataQuestionTS = [
+let getDataQuestionTS = [
   {
     id: uuidv4(),
     question: "Qual o principal benefício do TypeScript sobre o JavaScript?",
@@ -131,3 +131,5 @@ export let getDataQuestionTS = [
     correctAnswer: 1,
   },
 ];
+
+export default getDataQuestionTS;

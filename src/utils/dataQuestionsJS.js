@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-export let getDataQuestionJS = [
+let getDataQuestionJS = [
   {
     id: uuidv4(),
     question:
@@ -166,3 +166,5 @@ export let getDataQuestionJS = [
     correctAnswer: 2,
   },
 ];
+
+export default getDataQuestionJS;
