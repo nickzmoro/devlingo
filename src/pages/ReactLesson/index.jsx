@@ -4,13 +4,23 @@ import dataQuestionsReact from "../../utils/dataQuestionsReact";
 import { useState } from "react";
 import OptionButton from "../../components/OptionButton";
 import ButtonAction from "../../components/ButtonAction";
+import { FaCheck } from "react-icons/fa";
+import ToastMessage from "../../components/ToastMessage";
 
 const ReactLesson = () => {
   const [nextQuestion, setNextQuestion] = useState(0);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
+  const [toastMessage, setToastMessage] = useState(null);
 
   const currentIssue = dataQuestionsReact[nextQuestion];
   const progress = (nextQuestion / dataQuestionsReact.length) * 100;
+  const correctAnswerText = currentIssue.options[currentIssue.correctAnswer];
+
+  const handleClickVerify = () => {
+    if (selectedQuestion === currentIssue.correctAnswer) {
+      setToastMessage("correct");
+    } else setToastMessage("incorrect");
+  };
 
   return (
     <>
@@ -33,7 +43,6 @@ const ReactLesson = () => {
         <div className="flex items-center gap-1.5">
           <img src="/heart.png" alt="Vidas" className="w-[22px]" />
           <span className="text-[1.2rem] font-extrabold text-[#FF4B4B]">5</span>
-          <p>{selectedQuestion}</p>
         </div>
       </div>
       {dataQuestionsReact.length > 0 ? (
@@ -73,8 +82,8 @@ const ReactLesson = () => {
                 text={"Verificar"}
                 validate={selectedQuestion === null}
                 onClick={() => {
-                  setNextQuestion(nextQuestion + 1);
                   setSelectedQuestion(null);
+                  handleClickVerify();
                 }}
                 green
               />
@@ -85,6 +94,26 @@ const ReactLesson = () => {
         <div>
           <p>Carregando...</p>
         </div>
+      )}
+      {toastMessage === "correct" && (
+        <ToastMessage
+          correctAnswer={correctAnswerText}
+          onClick={() => {
+            setNextQuestion(nextQuestion + 1);
+            setToastMessage(null);
+          }}
+          correct
+        />
+      )}
+      {toastMessage === "incorrect" && (
+        <ToastMessage
+          correctAnswer={correctAnswerText}
+          onClick={() => {
+            setNextQuestion(nextQuestion + 1);
+            setToastMessage(null);
+          }}
+          color="red"
+        />
       )}
     </>
   );
