@@ -11,6 +11,8 @@ const ReactLesson = () => {
   const [nextQuestion, setNextQuestion] = useState(0);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [toastMessage, setToastMessage] = useState(null);
+  const [amountLife, setAmountLife] = useState(5);
+  const [amountCristal, setAmountCristal] = useState(0);
 
   const currentIssue = dataQuestionsReact[nextQuestion];
   const progress = (nextQuestion / dataQuestionsReact.length) * 100;
@@ -19,12 +21,16 @@ const ReactLesson = () => {
   const handleClickVerify = () => {
     if (selectedQuestion === currentIssue.correctAnswer) {
       setToastMessage("correct");
-    } else setToastMessage("incorrect");
+      setAmountCristal(amountCristal + 10);
+    } else {
+      setToastMessage("incorrect");
+      setAmountLife(amountLife - 1);
+    }
   };
 
   return (
     <>
-      <Header hasLogged hasBorder />
+      <Header hasLogged hasBorder amountCristal={amountCristal} />
       <div className="flex w-screen h-auto items-center justify-center gap-5 mt-[100px]">
         <div>
           <IoClose
@@ -42,7 +48,9 @@ const ReactLesson = () => {
         </div>
         <div className="flex items-center gap-1.5">
           <img src="/heart.png" alt="Vidas" className="w-[22px]" />
-          <span className="text-[1.2rem] font-extrabold text-[#FF4B4B]">5</span>
+          <span className="text-[1.2rem] font-extrabold text-[#FF4B4B]">
+            {amountLife}
+          </span>
         </div>
       </div>
       {dataQuestionsReact.length > 0 ? (
@@ -114,6 +122,27 @@ const ReactLesson = () => {
           }}
           color="red"
         />
+      )}
+      {amountLife === 0 && (
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-[#000000d8]">
+          <div className="bg-[#fff] p-10 rounded-[12px] drop-shadow-[4px_4px_0px_#c5c5c5]">
+            <img src="/logo.png" alt="" />
+            <h4 className="text-[2rem] font-bold">
+              Você perdeu todas as vidas!
+            </h4>
+            <p className="text-[1.5rem]">
+              Ops! Você caiu na armadilha dos bugs. Bora tentar de novo?
+            </p>
+            <div>
+              <span>Oferta Única</span>
+              <p>
+                Você não desistiu — e nós também não! Receba +5 corações para
+                seguir praticando.
+              </p>
+              <button onClick={() => setAmountLife(5)}>Aceitar</button>
+            </div>
+          </div>
+        </div>
       )}
     </>
   );

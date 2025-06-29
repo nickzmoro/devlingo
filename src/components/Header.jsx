@@ -1,6 +1,6 @@
 import { TbWorld } from "react-icons/tb";
 
-const Header = ({ hasLogged }) => {
+const Header = ({ hasLogged, amountCristal }) => {
   return (
     <header className="fixed top-5 left-0 flex items-center justify-around w-full">
       <div className="flex items-center gap-3">
@@ -18,7 +18,9 @@ const Header = ({ hasLogged }) => {
           </div>
           <div className="flex items-center gap-1.5">
             <img src="/cristal.png" alt="Foguinho" className="w-[21px]" />
-            <span className="font-bold text-[#1CB0F6] text-[1.2rem]">150</span>
+            <span className="font-bold text-[#1CB0F6] text-[1.2rem]">
+              {amountCristal}
+            </span>
           </div>
         </div>
       ) : (
