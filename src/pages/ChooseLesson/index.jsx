@@ -1,6 +1,10 @@
 import Header from "../../components/Header";
 import Card from "../../components/CardChooseLanguage";
 
+import dataQuestionsReact from "../../utils/dataQuestionsReact";
+import dataQuestionsJS from "../../utils/dataQuestionsJS";
+import dataQuestionsTS from "../../utils/dataQuestionsTS";
+
 const ChooseLesson = () => {
   return (
     <>
@@ -17,19 +21,19 @@ const ChooseLesson = () => {
             <Card
               srcImage={"./devlingo-react.png"}
               language={"React"}
-              numberOfQuestions={"15"}
+              numberOfQuestions={dataQuestionsReact.length}
               routeNavigate={"./react-lesson"}
             />
             <Card
               srcImage={"./devlingo-javascript.png"}
               language={"JavaScript"}
-              numberOfQuestions={"17"}
+              numberOfQuestions={dataQuestionsJS.length}
               routeNavigate="./javascript-lesson"
             />
             <Card
               srcImage={"./devlingo-typescript.png"}
               language={"TypeScript"}
-              numberOfQuestions={"20"}
+              numberOfQuestions={dataQuestionsTS.length}
               routeNavigate="./typescript-lesson"
             />
           </div>
