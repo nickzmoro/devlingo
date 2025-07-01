@@ -1,9 +1,8 @@
+import QuizLesson from "../../components/QuizLesson";
 import dataQuestionsJS from "../../utils/dataQuestionsJS";
 
 const JavascriptLesson = () => {
-  console.log(dataQuestionsJS);
-
-  return <p>Essa é a página de questões sobre JavaScript</p>;
+  return <QuizLesson dataQuestions={dataQuestionsJS} />;
 };
 
 export default JavascriptLesson;

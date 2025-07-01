@@ -1,6 +1,7 @@
 const ButtonAction = ({
   onClick,
   text,
+  icon,
   green,
   validate,
   red,
@@ -10,7 +11,7 @@ const ButtonAction = ({
 }) => {
   return (
     <button
-      className={`px-10 py-4 rounded-[15px] font-bold uppercase ${
+      className={`flex items-center gap-2 px-10 py-4 rounded-[15px] font-bold uppercase ${
         green &&
         "text-[#ECF5EB] bg-[#64DB54] drop-shadow-[0px_6px_0px_#69AE5F] hover:bg-[#5dd44d]"
       } ${
@@ -28,6 +29,7 @@ const ButtonAction = ({
       } ${validate ? "pointer-events-none opacity-70" : "pointer-events-auto"}`}
       onClick={onClick}
     >
+      {icon}
       {text}
     </button>
   );

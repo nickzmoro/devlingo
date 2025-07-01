@@ -1,5 +1,6 @@
 import ButtonAction from "./ButtonAction";
 import ResultPieChart from "./ResultPieChart";
+import { LuRepeat } from "react-icons/lu";
 
 const Result = ({
   hits,
@@ -24,7 +25,12 @@ const Result = ({
         </span>
       </div>
       <div className="flex gap-3">
-        <ButtonAction text="Repetir" gray onClick={onClickRepeat} />
+        <ButtonAction
+          icon={<LuRepeat size={20} />}
+          text="Repetir"
+          gray
+          onClick={onClickRepeat}
+        />
         <ButtonAction text="Continuar" purple onClick={onClickContinue} />
       </div>
     </div>

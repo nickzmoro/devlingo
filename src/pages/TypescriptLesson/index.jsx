@@ -1,9 +1,8 @@
 import dataQuestionsTS from "../../utils/dataQuestionsTS";
+import QuizLesson from "../../components/QuizLesson";
 
 const TypescriptLesson = () => {
-  console.log(dataQuestionsTS);
-
-  return <p>Essa é a página de questões sobre TypeScript</p>;
+  return <QuizLesson dataQuestions={dataQuestionsTS} />;
 };
 
 export default TypescriptLesson;

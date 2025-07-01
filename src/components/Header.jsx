@@ -1,6 +1,9 @@
 import { TbWorld } from "react-icons/tb";
+import { useCrystal } from "../contexts/CrystalContext";
 
-const Header = ({ hasLogged, amountCristal }) => {
+const Header = ({ hasLogged }) => {
+  const { amountCristal } = useCrystal();
+
   return (
     <header className="fixed top-5 left-0 flex items-center justify-around w-full">
       <div className="flex items-center gap-3">
