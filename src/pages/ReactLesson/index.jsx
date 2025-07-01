@@ -129,6 +129,7 @@ const ReactLesson = () => {
             setNextQuestion(0);
             setCountErrors(0);
             setCountHits(0);
+            setAmountLife(5);
           }}
           onClickContinue={() => navigate("/choose")}
         />
