@@ -1,5 +1,6 @@
 import Header from "../../components/Header";
 import Card from "../../components/CardChooseLanguage";
+import Footer from "../../components/Footer";
 
 import dataQuestionsReact from "../../utils/dataQuestionsReact";
 import dataQuestionsJS from "../../utils/dataQuestionsJS";
@@ -10,7 +11,7 @@ const ChooseLesson = () => {
     <>
       <Header hasLogged />
       <section className="w-full min-h-screen flex items-center justify-center">
-        <div className="flex flex-col gap-9 mb-[100px]">
+        <div className="flex flex-col gap-9 mb-[120px]">
           <div className="flex flex-col items-center gap-4">
             <img src="./devlingo-pensativo.png" alt="Devlingo pensativo" />
             <h3 className="text-[#4B4B4B] font-[700] text-[2rem]">
@@ -42,6 +43,7 @@ const ChooseLesson = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
