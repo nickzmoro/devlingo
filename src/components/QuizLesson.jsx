@@ -7,15 +7,18 @@ import Result from "./ResultContainer";
 import ToastMessage from "./ToastMessage";
 import Header from "./Header";
 import { useCrystal } from "../contexts/CrystalContext";
+import { useFinished } from "../contexts/FinishedContext";
 
-const QuizLesson = ({ dataQuestions }) => {
+const QuizLesson = ({ dataQuestions, language }) => {
   const [nextQuestion, setNextQuestion] = useState(0);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [toastMessage, setToastMessage] = useState(null);
   const [amountLife, setAmountLife] = useState(5);
-  const { amountCristal, setAmountCristal } = useCrystal();
   const [countHits, setCountHits] = useState(0);
   const [countErrors, setCountErrors] = useState(0);
+
+  const { amountCristal, setAmountCristal } = useCrystal();
+  const { setLanguageFinished } = useFinished();
 
   const navigate = useNavigate();
 
@@ -128,7 +131,10 @@ const QuizLesson = ({ dataQuestions }) => {
             setCountHits(0);
             setAmountLife(5);
           }}
-          onClickContinue={() => navigate("/choose")}
+          onClickContinue={() => {
+            setLanguageFinished(language);
+            navigate("/choose");
+          }}
         />
       )}
       {toastMessage === "correct" && (

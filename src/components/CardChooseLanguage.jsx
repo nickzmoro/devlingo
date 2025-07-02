@@ -1,13 +1,16 @@
-import { FaPlay } from "react-icons/fa";
+import { FaCheck, FaPlay } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useFinished } from "../contexts/FinishedContext";
 
 const CardChooseLanguage = ({
   srcImage,
-  language,
+  tech,
   numberOfQuestions,
   routeNavigate,
+  language,
 }) => {
   const navigate = useNavigate();
+  const { finishedStatus } = useFinished();
 
   return (
     <>
@@ -16,17 +19,21 @@ const CardChooseLanguage = ({
         onClick={() => navigate(routeNavigate)}
       >
         <img src={srcImage} alt="React" className="mb-5 w-[100px]" />
-        <p className="text-[1.2rem] font-bold text-[#323330] p-0 m-0">
-          {language}
-        </p>
+        <p className="text-[1.2rem] font-bold text-[#323330] p-0 m-0">{tech}</p>
         <span className="text-[1.1rem] font-[500] text-[#969696] p-0 m-0">
           {numberOfQuestions} questões
         </span>
 
         <div className="absolute opacity-0 pointer-events-none bottom-[-60px] left-0 w-full group-hover:opacity-100 transition-all duration-200">
-          <button className="w-full py-3 rounded-[12px] text-[1.1rem] bg-[#656565] flex items-center justify-center gap-3 border border-[#656565] text-white uppercase font-bold">
-            <FaPlay /> Jogar
-          </button>
+          {finishedStatus[language] ? (
+            <button className="w-full py-3 rounded-[12px] text-[1.1rem] bg-[#69AE5F] flex items-center justify-center gap-3 border border-[#69AE5F] text-white uppercase font-bold">
+              <FaCheck /> Concluído
+            </button>
+          ) : (
+            <button className="w-full py-3 rounded-[12px] text-[1.1rem] bg-[#656565] flex items-center justify-center gap-3 border border-[#656565] text-white uppercase font-bold">
+              <FaPlay /> Jogar
+            </button>
+          )}
         </div>
       </div>
     </>
