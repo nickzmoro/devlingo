@@ -12,7 +12,8 @@ const Result = ({
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen">
       {hits === 0 && errors === 0 ? (
-        <div className="mb-[50px] text-[1.2rem] max-w-[500px] text-center font-[500] text-[#797979]">
+        <div className="flex flex-col items-center mb-[50px] text-[1.2rem] max-w-[500px] text-center font-[500] text-[#797979]">
+          <img src="/devlingo-triste.png" alt="" className="w-[150px]" />
           <p>
             Não conseguimos obter nenhum relatório, pois você pulou todas as
             questões..

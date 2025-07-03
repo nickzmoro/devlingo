@@ -101,7 +101,7 @@ const QuizLesson = ({ dataQuestions, language }) => {
                     gray
                   />
                 </div>
-                <div>
+                <div className="mt-5">
                   <ButtonAction
                     text={"Verificar"}
                     validate={selectedQuestion === null}
