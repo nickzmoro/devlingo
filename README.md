@@ -29,6 +29,15 @@ Este projeto representa um passo importante na consolidação dos meus estudos c
 - **React Icons**
 - **Git + GitHub**
 
+## 📁 Instalação Local
+
+```bash
+git clone https://github.com/nickzmoro/devlingo.git
+cd devlingo
+npm install
+npm run dev
+```
+
 ## 🧠 Desafios Enfrentados
 
 O maior desafio foi estruturar a base do projeto: criar uma arquitetura sólida que permitisse a adição de novos quizzes e categorias, além de organizar bem os dados e componentes. Após essa base estar bem montada, o desenvolvimento fluiu naturalmente.
