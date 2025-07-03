@@ -45,7 +45,7 @@ const QuizLesson = ({ dataQuestions, language }) => {
       <Header hasLogged hasBorder />
       {nextQuestion < dataQuestions.length ? (
         <>
-          <div className="flex w-screen h-auto items-center justify-center gap-5 mt-[100px]">
+          <div className="flex w-screen max-h-screen items-center justify-center gap-5 mt-[100px]">
             <div>
               <IoClose
                 size={28}
@@ -90,7 +90,7 @@ const QuizLesson = ({ dataQuestions, language }) => {
                   ))}
                 </div>
                 <div className="absolute bottom-[-290px] left-[25%] w-[50%] max-md:w-full max-md:left-0 max-md:px-5 max-md:bottom-[-150px] border-t border-t-[#C4C4C4] flex items-center justify-between -z-10">
-                  <div className="mt-3 mb-3">
+                  <div className="mt-3 mb-5">
                     <ButtonAction
                       text={"Pular"}
                       onClick={() => {
@@ -100,7 +100,7 @@ const QuizLesson = ({ dataQuestions, language }) => {
                       gray
                     />
                   </div>
-                  <div className="mt-3 mb-3">
+                  <div className="mt-3 mb-5">
                     <ButtonAction
                       text={"Verificar"}
                       validate={selectedQuestion === null}
