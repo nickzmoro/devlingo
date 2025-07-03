@@ -10,7 +10,7 @@ const ChooseLesson = () => {
   return (
     <>
       <Header hasLogged />
-      <section className="w-full min-h-screen flex items-center justify-center">
+      <section className="w-full min-h-screen flex items-center justify-center max-md:mt-[80px]">
         <div className="flex flex-col gap-9 mb-[120px]">
           <div className="flex flex-col items-center gap-4">
             <img src="./devlingo-pensativo.png" alt="Devlingo pensativo" />
@@ -18,7 +18,7 @@ const ChooseLesson = () => {
               O que vamos aprender?
             </h3>
           </div>
-          <div className="flex gap-5">
+          <div className="flex items-center justify-center gap-5 max-md:flex-col max-md:gap-[70px]">
             <Card
               srcImage={"./devlingo-react.png"}
               tech={"React"}

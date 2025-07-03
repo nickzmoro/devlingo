@@ -15,14 +15,14 @@ let getDataQuestionsReact = [
   {
     id: uuidv4(),
     question:
-      "Qual hook do React você deve usar para executar efeitos colaterais (como chamadas a APIs) após a renderização de um componente?",
+      "Qual hook do React você deve usar para executar efeitos colaterais?",
     options: ["useState", "useMemo", "useEffect", "useCallback"],
     correctAnswer: 2,
   },
   {
     id: uuidv4(),
     question:
-      "No contexto do React Fiber, qual é a principal vantagem do reconciliation incremental (“time slicing”)?",
+      "No contexto do React Fiber, qual é a principal vantagem do reconciliation incremental?",
     options: [
       "Permitir múltiplos roots em uma mesma árvore de componentes",
       "Dividir o trabalho de renderização em pedaços, evitando bloqueios da UI",
@@ -45,7 +45,7 @@ let getDataQuestionsReact = [
   {
     id: uuidv4(),
     question:
-      "Em React Router, qual componente você utiliza para definir rotas dentro da sua aplicação?",
+      "Em React Router, qual componente você utiliza para definir rotas do projeto?",
     options: [
       "<Route>",
       "<Switch> (v5) / <Routes> (v6)",
@@ -57,7 +57,7 @@ let getDataQuestionsReact = [
   {
     id: uuidv4(),
     question:
-      "Qual das seguintes afirmações sobre hooks personalizados (“custom hooks”) é verdadeira?",
+      "Qual das seguintes afirmações sobre hooks personalizados é verdadeira?",
     options: [
       "Precisam obrigatoriamente usar useReducer internamente",
       "Devem sempre iniciar seus nomes com “use” para que as regras de hooks funcionem",
@@ -81,14 +81,14 @@ let getDataQuestionsReact = [
   {
     id: uuidv4(),
     question:
-      "Qual hook você pode usar para memorizar um valor computado e evitar recomputações desnecessárias?",
+      "Hook para memorizar valor computado e evitar recomputações desnecessárias",
     options: ["useCallback", "useMemo", "useLayoutEffect", "useTransition"],
     correctAnswer: 1,
   },
   {
     id: uuidv4(),
     question:
-      "Em Error Boundaries, qual método você implementa para capturar erros em componentes-filho e renderizar uma UI alternativa?",
+      "Em Error Boundaries, qual método para capturar erros em componentes-filho e renderizar uma UI alternativa?",
     options: [
       "static getDerivedStateFromError()",
       "componentDidCatch()",
@@ -123,7 +123,7 @@ let getDataQuestionsReact = [
   {
     id: uuidv4(),
     question:
-      "Sobre React Suspense e carregamento dinâmico de componentes, assinale a alternativa correta:",
+      "Sobre React Suspense e carregamento dinâmico de componentes, assinale corretamente:",
     options: [
       "Suspense só funciona para dados, não para componentes",
       "Suspense é usado para interromper a renderização até que todos os dados sejam carregados",

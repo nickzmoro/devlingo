@@ -11,7 +11,7 @@ const ButtonAction = ({
 }) => {
   return (
     <button
-      className={`flex items-center gap-2 px-10 py-4 rounded-[15px] font-bold uppercase ${
+      className={`flex items-center gap-2 px-10 py-4 rounded-[15px] font-bold uppercase max-sm:px-8 ${
         green &&
         "text-[#ECF5EB] bg-[#64DB54] drop-shadow-[0px_6px_0px_#69AE5F] hover:bg-[#5dd44d]"
       } ${

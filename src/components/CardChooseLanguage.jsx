@@ -15,7 +15,7 @@ const CardChooseLanguage = ({
   return (
     <>
       <div
-        className="group relative flex flex-col items-center py-9 px-[60px] border border-[#d1d1d1] rounded-[12px] drop-shadow-[0px_3px_0px_#d1d1d1] bg-white cursor-pointer hover:border-[#bebebe] hover:drop-shadow-[0px_3px_0px_#bebebe] hover:bg-[#f5f5f5] transition-all duration-200"
+        className="group relative flex flex-col items-center py-9 px-[60px] max-md:px-[120px] border border-[#d1d1d1] rounded-[12px] drop-shadow-[0px_3px_0px_#d1d1d1] bg-white cursor-pointer hover:border-[#bebebe] hover:drop-shadow-[0px_3px_0px_#bebebe] hover:bg-[#f5f5f5] transition-all duration-200"
         onClick={() => navigate(routeNavigate)}
       >
         <img src={srcImage} alt="React" className="mb-5 w-[100px]" />
@@ -24,7 +24,7 @@ const CardChooseLanguage = ({
           {numberOfQuestions} questões
         </span>
 
-        <div className="absolute opacity-0 pointer-events-none bottom-[-60px] left-0 w-full group-hover:opacity-100 transition-all duration-200">
+        <div className="absolute opacity-0 pointer-events-none bottom-[-60px] left-0 w-full group-hover:opacity-100 transition-all duration-200 z-99">
           {finishedStatus[language] ? (
             <button className="w-full py-3 rounded-[12px] text-[1.1rem] bg-[#69AE5F] flex items-center justify-center gap-3 border border-[#69AE5F] text-white uppercase font-bold">
               <FaCheck /> Concluído

@@ -4,6 +4,10 @@ body {
   background-color: #fff;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 * {
   font-family: "Barlow", sans-serif;
 }

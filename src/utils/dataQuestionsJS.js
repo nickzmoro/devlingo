@@ -27,13 +27,6 @@ let getDataQuestionJS = [
   {
     id: uuidv4(),
     question:
-      "Considerando closures, qual será o resultado ao executar o código abaixo?\n\nfunction contador() {\n  let count = 0;\n  return () => ++count;\n}\nconst c1 = contador();\nconsole.log(c1(), c1(), c1());",
-    options: ["0 1 2", "1 2 3", "undefined undefined undefined", "1 1 1"],
-    correctAnswer: 1,
-  },
-  {
-    id: uuidv4(),
-    question:
       "Qual o operador usado para verificar igualdade de valor e tipo em JavaScript?",
     options: ["==", "=", "===", "!="],
     correctAnswer: 2,

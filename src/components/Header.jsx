@@ -5,7 +5,7 @@ const Header = ({ hasLogged }) => {
   const { amountCristal } = useCrystal();
 
   return (
-    <header className="fixed top-5 left-0 flex items-center justify-around w-full">
+    <header className="absolute top-5 left-0 flex items-center justify-around w-full">
       <div className="flex items-center gap-3">
         <img src="/logo.png" alt="Logo" className="w-[35px] h-[35px]" />
         <p className="text-[#8057FE] text-[1.5rem] font-extrabold">

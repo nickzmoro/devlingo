@@ -53,7 +53,7 @@ const QuizLesson = ({ dataQuestions, language }) => {
                 onClick={() => navigate("/choose")}
               />
             </div>
-            <div className="w-[50%]">
+            <div className="w-[50%] max-sm:w-[60%]">
               <div className="relative w-full h-5 bg-[#E6E6E6] rounded-full">
                 <div
                   className="absolute rounded-full top-0 left-0 h-full bg-[#8057FE] transition-all duration-300"
@@ -70,9 +70,9 @@ const QuizLesson = ({ dataQuestions, language }) => {
           </div>
           {dataQuestions.length > 0 ? (
             <>
-              <div className="w-full h-auto flex flex-col items-center justify-center mt-[80px]">
+              <div className="w-full relative h-auto flex flex-col items-center justify-center mt-[80px] max-md:px-5 max-md:mt-10 z-40">
                 <div>
-                  <h4 className="text-[1.8rem] font-bold text-[#4B4B4B] max-w-[1000px] text-center">
+                  <h4 className="text-[1.8rem] font-bold text-[#4B4B4B] max-w-[1000px] text-center max-md:text-[1.6rem]">
                     {currentIssue.question}
                   </h4>
                 </div>
@@ -89,28 +89,28 @@ const QuizLesson = ({ dataQuestions, language }) => {
                     />
                   ))}
                 </div>
-              </div>
-              <div className="absolute bottom-[40px] left-[25%] w-[50%] border-t border-t-[#C4C4C4] flex items-center justify-between">
-                <div className="mt-5">
-                  <ButtonAction
-                    text={"Pular"}
-                    onClick={() => {
-                      setNextQuestion(nextQuestion + 1);
-                      setSelectedQuestion(null);
-                    }}
-                    gray
-                  />
-                </div>
-                <div className="mt-5">
-                  <ButtonAction
-                    text={"Verificar"}
-                    validate={selectedQuestion === null}
-                    onClick={() => {
-                      setSelectedQuestion(null);
-                      handleClickVerify();
-                    }}
-                    green
-                  />
+                <div className="absolute bottom-[-290px] left-[25%] w-[50%] max-md:w-full max-md:left-0 max-md:px-5 max-md:bottom-[-150px] border-t border-t-[#C4C4C4] flex items-center justify-between -z-10">
+                  <div className="mt-3 mb-3">
+                    <ButtonAction
+                      text={"Pular"}
+                      onClick={() => {
+                        setNextQuestion(nextQuestion + 1);
+                        setSelectedQuestion(null);
+                      }}
+                      gray
+                    />
+                  </div>
+                  <div className="mt-3 mb-3">
+                    <ButtonAction
+                      text={"Verificar"}
+                      validate={selectedQuestion === null}
+                      onClick={() => {
+                        setSelectedQuestion(null);
+                        handleClickVerify();
+                      }}
+                      green
+                    />
+                  </div>
                 </div>
               </div>
             </>
@@ -158,8 +158,8 @@ const QuizLesson = ({ dataQuestions, language }) => {
         />
       )}
       {amountLife === 0 && (
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-[#000000d8]">
-          <div className="bg-[#fff] flex flex-col items-center max-w-[400px] text-center p-10 rounded-[12px] drop-shadow-[4px_4px_0px_#c5c5c5]">
+        <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#000000d8] z-99 max-sm:px-5">
+          <div className="bg-[#fff] flex flex-col items-center max-w-[400px] text-center p-10 rounded-[12px] drop-shadow-[4px_4px_0px_#c5c5c5] max-sm:p-8">
             <img
               src="/devlingo-triste.png"
               alt=""
